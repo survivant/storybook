@@ -12,12 +12,16 @@ let configPath;
 const babel = require('babel-core');
 
 const pkg = readPkgUp.sync().pkg;
-const isStorybook =
-  (pkg.devDependencies && pkg.devDependencies['@kadira/storybook']) ||
-  (pkg.dependencies && pkg.dependencies['@kadira/storybook']);
-const isRNStorybook =
-  (pkg.devDependencies && pkg.devDependencies['@kadira/react-native-storybook']) ||
-  (pkg.dependencies && pkg.dependencies['@kadira/react-native-storybook']);
+
+const hasDependency = function(name) {
+  return (
+    (pkg.devDependencies && pkg.devDependencies[name]) ||
+    (pkg.dependencies && pkg.dependencies[name])
+  );
+};
+
+const isStorybook = hasDependency('@kadira/storybook');
+const isRNStorybook = hasDependency('@kadira/react-native-storybook');
 
 export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());

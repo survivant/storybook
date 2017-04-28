@@ -22,7 +22,9 @@
     "@kadira/storybook-channel": "file:../../packages/channel",
     "@kadira/storybook-channel-postmsg": "file:../../packages/channel-postmessage",
     "@kadira/storybook-ui": "file:../../packages/storybook-ui",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "react-test-renderer": "^15.4.2",
+    "storyshots": "file:../../packages/storyshots"
   },
   "private": true
 }
