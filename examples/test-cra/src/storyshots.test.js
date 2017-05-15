@@ -1,2 +1,5 @@
-import initStoryshots from 'storyshots';
+import initStoryshots, { renderOnly } from 'storyshots';
+
 initStoryshots();
+
+// initStoryshots({ test: renderOnly });
